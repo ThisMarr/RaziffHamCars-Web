@@ -1,748 +1,1345 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>RaziffhamCars | Honda Civic Type R FL5</title>
+<title>RaziffhamCars | Kereta Premium</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        body {
-            background: #080808;
-            color: white;
-        }
+body{
+    background:#080808;
+    color:white;
+}
 
-        /* NAVBAR */
-        nav {
-            background: #111;
-            padding: 18px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid #222;
-        }
+/* NAVBAR */
+nav{
+    background:#111;
+    padding:18px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    border-bottom:1px solid #222;
+}
 
-        .logo {
-            font-size: 25px;
-            font-weight: bold;
-            color: #e50914;
-        }
+.logo{
+    font-size:25px;
+    font-weight:bold;
+    color:#e50914;
+}
 
-        .logo span {
-            color: white;
-        }
+.logo span{
+    color:white;
+}
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-        }
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            transition: 0.3s;
-        }
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
 
-        nav ul li a:hover {
-            color: #e50914;
-        }
+nav ul li a:hover{
+    color:#e50914;
+}
 
-        /* HERO */
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 30px;
-            background:
-                linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.9)),
-                url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80");
-            background-size: cover;
-            background-position: center;
-        }
+/* HERO */
+.hero{
+    min-height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px;
+    background:
+    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.9)),
+    url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+}
 
-        .hero-content {
-            max-width: 800px;
-        }
+.hero-content{
+    max-width:850px;
+}
 
-        .hero h1 {
-            font-size: 60px;
-            margin-bottom: 15px;
-        }
+.hero h1{
+    font-size:60px;
+    margin-bottom:15px;
+}
 
-        .hero h1 span {
-            color: #e50914;
-        }
+.hero h1 span{
+    color:#e50914;
+}
 
-        .hero p {
-            font-size: 19px;
-            color: #ddd;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
+.hero p{
+    font-size:19px;
+    color:#ddd;
+    margin-bottom:30px;
+    line-height:1.6;
+}
 
-        .btn {
-            display: inline-block;
-            background: #e50914;
-            color: white;
-            border: none;
-            padding: 13px 25px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 16px;
-            text-decoration: none;
-            transition: 0.3s;
-        }
+.btn{
+    display:inline-block;
+    background:#e50914;
+    color:white;
+    border:none;
+    padding:13px 25px;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:16px;
+    text-decoration:none;
+    transition:.3s;
+}
 
-        .btn:hover {
-            background: #ff2633;
-            transform: translateY(-2px);
-        }
+.btn:hover{
+    background:#ff2633;
+    transform:translateY(-2px);
+}
 
-        /* SECTIONS */
-        section {
-            padding: 80px 8%;
-        }
+/* SECTIONS */
+section{
+    padding:80px 8%;
+}
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+}
 
-        .section-title h2 {
-            font-size: 38px;
-            margin-bottom: 10px;
-        }
+.section-title h2{
+    font-size:38px;
+    margin-bottom:10px;
+}
 
-        .section-title p {
-            color: #aaa;
-        }
+.section-title p{
+    color:#aaa;
+}
 
-        /* SEARCH */
-        .search-box {
-            max-width: 500px;
-            margin: 0 auto 40px;
-        }
+/* SEARCH */
+.search-box{
+    max-width:550px;
+    margin:0 auto 40px;
+}
 
-        .search-box input {
-            width: 100%;
-            padding: 15px;
-            border-radius: 6px;
-            border: 1px solid #333;
-            background: #151515;
-            color: white;
-            outline: none;
-            font-size: 16px;
-        }
+.search-box input{
+    width:100%;
+    padding:15px;
+    border-radius:6px;
+    border:1px solid #333;
+    background:#151515;
+    color:white;
+    outline:none;
+    font-size:16px;
+}
 
-        .search-box input:focus {
-            border-color: #e50914;
-        }
+.search-box input:focus{
+    border-color:#e50914;
+}
 
-        /* CARS */
-        .cars {
-            display: flex;
-            justify-content: center;
-        }
+/* CARS GRID */
+.cars{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
 
-        .car {
-            width: 430px;
-            background: #111;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid #252525;
-            transition: 0.3s;
-        }
+.car{
+    background:#111;
+    border-radius:12px;
+    overflow:hidden;
+    border:1px solid #252525;
+    transition:.3s;
+}
 
-        .car:hover {
-            transform: translateY(-8px);
-            border-color: #e50914;
-            box-shadow: 0 10px 35px rgba(229, 9, 20, 0.2);
-        }
+.car:hover{
+    transform:translateY(-7px);
+    border-color:#e50914;
+    box-shadow:0 10px 35px rgba(229,9,20,.2);
+}
 
-        .car img {
-            width: 100%;
-            height: 270px;
-            object-fit: cover;
-            display: block;
-        }
+.car img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    display:block;
+}
 
-        .car-info {
-            padding: 25px;
-        }
+.car-info{
+    padding:22px;
+}
 
-        .car-info h3 {
-            font-size: 25px;
-            margin-bottom: 12px;
-        }
+.car-info h3{
+    font-size:21px;
+    margin-bottom:12px;
+}
 
-        .car-info p {
-            color: #aaa;
-            margin-bottom: 7px;
-        }
+.car-info p{
+    color:#aaa;
+    margin-bottom:7px;
+}
 
-        .price {
-            font-size: 28px;
-            color: #e50914;
-            font-weight: bold;
-            margin: 20px 0;
-        }
+.price{
+    font-size:24px;
+    color:#e50914;
+    font-weight:bold;
+    margin:18px 0;
+}
 
-        /* ABOUT */
-        .about {
-            background: #101010;
-            text-align: center;
-        }
+/* LOAN CALCULATOR */
+.loan-section{
+    background:#101010;
+}
 
-        .about-content {
-            max-width: 800px;
-            margin: auto;
-        }
+.loan-box{
+    max-width:700px;
+    margin:auto;
+    background:#151515;
+    padding:30px;
+    border-radius:15px;
+    border:1px solid #292929;
+}
 
-        .about p {
-            color: #bbb;
-            line-height: 1.8;
-            font-size: 17px;
-        }
+.loan-box label{
+    display:block;
+    margin-bottom:8px;
+    color:#ddd;
+}
 
-        /* CONTACT */
-        .contact-form {
-            max-width: 600px;
-            margin: auto;
-        }
+.loan-box input,
+.loan-box select{
+    width:100%;
+    padding:14px;
+    margin-bottom:20px;
+    background:#0b0b0b;
+    color:white;
+    border:1px solid #333;
+    border-radius:6px;
+    outline:none;
+    font-size:16px;
+}
 
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            margin-bottom: 15px;
-            padding: 15px;
-            background: #111;
-            border: 1px solid #333;
-            color: white;
-            border-radius: 6px;
-            outline: none;
-        }
+.loan-box input:focus,
+.loan-box select:focus{
+    border-color:#e50914;
+}
 
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            border-color: #e50914;
-        }
+.loan-result{
+    margin-top:25px;
+    padding:25px;
+    background:#0b0b0b;
+    border-radius:10px;
+    border-left:4px solid #e50914;
+}
 
-        .contact-form textarea {
-            height: 150px;
-            resize: vertical;
-        }
+.loan-result h3{
+    margin-bottom:15px;
+}
 
-        /* FOOTER */
-        footer {
-            background: #050505;
-            text-align: center;
-            padding: 25px;
-            color: #777;
-            border-top: 1px solid #222;
-        }
+.monthly{
+    color:#e50914;
+    font-size:35px;
+    font-weight:bold;
+    margin:10px 0;
+}
 
-        /* POPUP */
-        .popup {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
+.loan-result p{
+    color:#aaa;
+    margin:7px 0;
+}
 
-        .popup-box {
-            background: #151515;
-            width: 400px;
-            max-width: 100%;
-            padding: 30px;
-            border-radius: 12px;
-            text-align: center;
-            border: 1px solid #333;
-        }
+/* ABOUT */
+.about{
+    text-align:center;
+}
 
-        .popup-box h2 {
-            margin-bottom: 15px;
-        }
+.about-content{
+    max-width:800px;
+    margin:auto;
+}
 
-        .popup-box p {
-            color: #aaa;
-            margin-bottom: 20px;
-        }
+.about p{
+    color:#bbb;
+    line-height:1.8;
+    font-size:17px;
+}
 
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 25px;
-            cursor: pointer;
-        }
+/* CONTACT */
+.contact-form{
+    max-width:600px;
+    margin:auto;
+}
 
-        .close:hover {
-            color: white;
-        }
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    margin-bottom:15px;
+    padding:15px;
+    background:#111;
+    border:1px solid #333;
+    color:white;
+    border-radius:6px;
+    outline:none;
+}
 
-        /* MOBILE */
-        @media (max-width: 700px) {
+.contact-form textarea{
+    height:150px;
+    resize:vertical;
+}
 
-            nav {
-                padding: 15px 5%;
-            }
+/* FOOTER */
+footer{
+    background:#050505;
+    text-align:center;
+    padding:25px;
+    color:#777;
+    border-top:1px solid #222;
+}
 
-            nav ul {
-                gap: 12px;
-                font-size: 13px;
-            }
+footer p{
+    margin:5px;
+}
 
-            .logo {
-                font-size: 19px;
-            }
+/* POPUP */
+.popup{
+    display:none;
+    position:fixed;
+    z-index:2000;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.8);
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
 
-            .hero h1 {
-                font-size: 40px;
-            }
+.popup-box{
+    background:#151515;
+    width:420px;
+    max-width:100%;
+    padding:30px;
+    border-radius:12px;
+    text-align:center;
+    border:1px solid #333;
+}
 
-            .hero p {
-                font-size: 16px;
-            }
+.popup-box h2{
+    margin-bottom:15px;
+}
 
-            section {
-                padding: 60px 5%;
-            }
+.popup-box p{
+    color:#aaa;
+    margin-bottom:20px;
+}
 
-            .car {
-                width: 100%;
-            }
+.close{
+    color:#aaa;
+    float:right;
+    font-size:25px;
+    cursor:pointer;
+}
 
-            .car img {
-                height: 230px;
-            }
+.close:hover{
+    color:white;
+}
 
-            .section-title h2 {
-                font-size: 30px;
-            }
-        }
-    </style>
+/* MOBILE */
+@media(max-width:700px){
+
+    nav{
+        padding:15px 5%;
+    }
+
+    nav ul{
+        gap:12px;
+        font-size:12px;
+    }
+
+    .logo{
+        font-size:19px;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    section{
+        padding:60px 5%;
+    }
+
+    .section-title h2{
+        font-size:30px;
+    }
+
+    .monthly{
+        font-size:28px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
-    <nav>
-        <div class="logo">
-            Raziffham<span>Cars</span>
-        </div>
+<!-- NAVBAR -->
+<nav>
 
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#cars">Kereta</a></li>
-            <li><a href="#about">Tentang</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <div class="logo">
+        Raziffham<span>Cars</span>
+    </div>
 
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#cars">Kereta</a></li>
+        <li><a href="#loan">Loan</a></li>
+        <li><a href="#about">Tentang</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 
-    <!-- HERO -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-
-            <h1>
-                Honda Civic
-                <span>Type R</span>
-            </h1>
-
-            <p>
-                Honda Civic Type R FL5 2022.
-                Performance tinggi, design agresif dan
-                pengalaman pemanduan yang luar biasa.
-            </p>
-
-            <a href="#cars" class="btn">
-                Lihat Kereta
-            </a>
-
-        </div>
-    </section>
+</nav>
 
 
-    <!-- CARS -->
-    <section id="cars">
+<!-- HERO -->
+<section class="hero" id="home">
 
-        <div class="section-title">
-            <h2>Kereta Untuk Dijual</h2>
-            <p>Kereta pilihan daripada RaziffhamCars</p>
-        </div>
+    <div class="hero-content">
 
-        <div class="search-box">
-            <input
-                type="text"
-                id="search"
-                placeholder="Cari kereta..."
-                onkeyup="searchCars()"
+        <h1>
+            Raziffham
+            <span>Cars</span>
+        </h1>
+
+        <p>
+            Koleksi kereta premium dan performance
+            untuk pilihan anda.
+        </p>
+
+        <a href="#cars" class="btn">
+            Lihat Kereta
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- CARS -->
+<section id="cars">
+
+    <div class="section-title">
+
+        <h2>Kereta Untuk Dijual</h2>
+
+        <p>
+            Pilihan kereta RaziffhamCars
+        </p>
+
+    </div>
+
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="search"
+            placeholder="Cari model kereta..."
+            onkeyup="searchCars()"
+        >
+
+    </div>
+
+
+    <div class="cars">
+
+
+        <!-- HONDA -->
+        <div class="car"
+             data-name="Honda Civic FL5 Type R Bodykit Mugen">
+
+            <img
+                src="https://careta.my/sites/default/files/photo-gallery/2023-03/HONDA-CIVIC-TYPE-R-EXTERIOR-01.jpg"
+                alt="Honda Civic FL5 Type R"
             >
+
+            <div class="car-info">
+
+                <h3>
+                    Honda Civic FL5 Type R Bodykit Mugen
+                </h3>
+
+                <p>2022 • Manual</p>
+                <p>2.0L VTEC Turbo</p>
+                <p>Bodykit Mugen</p>
+                <p>Championship White</p>
+
+                <div class="price">
+                    RM 225,900
+                </div>
+
+                <button class="btn"
+                    onclick="showCar(
+                    'Honda Civic FL5 Type R Bodykit Mugen 2022',
+                    'RM 225,900')">
+
+                    Lihat Detail
+
+                </button>
+
+            </div>
         </div>
 
-        <div class="cars">
 
-            <!-- HONDA CIVIC TYPE R FL5 -->
-            <div class="car" data-name="Honda Civic Type R FL5">
+        <!-- ALFA ROMEO -->
+        <div class="car"
+             data-name="Alfa Romeo Stelvio Veloce Q4">
 
-                <img
-                    src="https://careta.my/sites/default/files/photo-gallery/2023-03/HONDA-CIVIC-TYPE-R-EXTERIOR-01.jpg"
-                    alt="Honda Civic Type R FL5 Championship White 2022"
-                >
+            <img
+                src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1000&q=80"
+                alt="Alfa Romeo Stelvio"
+            >
 
-                <div class="car-info">
+            <div class="car-info">
 
-                    <h3>
-                        Honda Civic Type R FL5
-                    </h3>
+                <h3>
+                    ALFA ROMEO STELVIO VELOCE Q4
+                </h3>
 
-                    <p>
-                        2022 • Manual
-                    </p>
+                <p>2021 • Automatic</p>
+                <p>Veloce Q4</p>
+                <p>Luxury SUV</p>
 
-                    <p>
-                        2.0L VTEC Turbo
-                    </p>
-
-                    <p>
-                        Championship White
-                    </p>
-
-                    <div class="price">
-                        RM 225,900
-                    </div>
-
-                    <button
-                        class="btn"
-                        onclick="showCar(
-                            'Honda Civic Type R FL5 2022',
-                            'RM 225,900'
-                        )"
-                    >
-                        Lihat Detail
-                    </button>
-
+                <div class="price">
+                    RM 213,000
                 </div>
+
+                <button class="btn"
+                    onclick="showCar(
+                    'ALFA ROMEO STELVIO VELOCE Q4 2021',
+                    'RM 213,000')">
+
+                    Lihat Detail
+
+                </button>
+
+            </div>
+        </div>
+
+
+        <!-- GR YARIS -->
+        <div class="car"
+             data-name="Toyota GR Yaris Sport">
+
+            <img
+                src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1000&q=80"
+                alt="Toyota GR Yaris"
+            >
+
+            <div class="car-info">
+
+                <h3>
+                    TOYOTA GR YARIS SPORT
+                </h3>
+
+                <p>2025 • Manual</p>
+                <p>GR Performance</p>
+                <p>Sports Hatchback</p>
+
+                <div class="price">
+                    RM 235,000
+                </div>
+
+                <button class="btn"
+                    onclick="showCar(
+                    'TOYOTA GR YARIS SPORT 2025',
+                    'RM 235,000')">
+
+                    Lihat Detail
+
+                </button>
+
+            </div>
+        </div>
+
+
+        <!-- ALPHARD -->
+        <div class="car"
+             data-name="Toyota Alphard 2.5 Z">
+
+            <img
+                src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=1000&q=80"
+                alt="Toyota Alphard"
+            >
+
+            <div class="car-info">
+
+                <h3>
+                    TOYOTA ALPHARD 2.5 Z
+                </h3>
+
+                <p>2024 • Automatic</p>
+                <p>2.5L</p>
+                <p>Premium MPV</p>
+
+                <div class="price">
+                    RM 273,000
+                </div>
+
+                <button class="btn"
+                    onclick="showCar(
+                    'TOYOTA ALPHARD 2.5 Z 2024',
+                    'RM 273,000')">
+
+                    Lihat Detail
+
+                </button>
+
+            </div>
+        </div>
+
+
+        <!-- LEXUS -->
+        <div class="car"
+             data-name="Lexus RX350">
+
+            <img
+                src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1000&q=80"
+                alt="Lexus RX350"
+            >
+
+            <div class="car-info">
+
+                <h3>
+                    LEXUS RX350
+                </h3>
+
+                <p>2024 • Automatic</p>
+                <p>RX350</p>
+                <p>Luxury SUV</p>
+
+                <div class="price">
+                    RM 325,000
+                </div>
+
+                <button class="btn"
+                    onclick="showCar(
+                    'LEXUS RX350 2024',
+                    'RM 325,000')">
+
+                    Lihat Detail
+
+                </button>
+
+            </div>
+        </div>
+
+
+        <!-- VOXY -->
+        <div class="car"
+             data-name="Toyota Voxy S-Z">
+
+            <img
+                src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1000&q=80"
+                alt="Toyota Voxy"
+            >
+
+            <div class="car-info">
+
+                <h3>
+                    TOYOTA VOXY S-Z
+                </h3>
+
+                <p>2022 • Automatic</p>
+                <p>S-Z Package</p>
+                <p>Premium MPV</p>
+
+                <div class="price">
+                    RM 148,900
+                </div>
+
+                <button class="btn"
+                    onclick="showCar(
+                    'TOYOTA VOXY S-Z 2022',
+                    'RM 148,900')">
+
+                    Lihat Detail
+
+                </button>
+
+            </div>
+        </div>
+
+
+        <!-- DEFENDER -->
+        <div class="car"
+             data-name="Land Rover Defender 110 X-Dynamic HSE D300">
+
+            <img
+                src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=1000&q=80"
+                alt="Land Rover Defender"
+            >
+
+            <div class="car-info">
+
+                <h3>
+                    LAND ROVER DEFENDER 110
+                    X-DYNAMIC HSE D300
+                </h3>
+
+                <p>2022 • Automatic</p>
+                <p>D300 Diesel</p>
+                <p>X-Dynamic HSE</p>
+
+                <div class="price">
+                    RM 349,000
+                </div>
+
+                <button class="btn"
+                    onclick="showCar(
+                    'LAND ROVER DEFENDER 110 X-DYNAMIC HSE D300 2022',
+                    'RM 349,000')">
+
+                    Lihat Detail
+
+                </button>
+
+            </div>
+        </div>
+
+
+        <!-- SUBARU -->
+        <div class="car"
+             data-name="Subaru BRZ S 2.4L">
+
+            <img
+                src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1000&q=80"
+                alt="Subaru BRZ"
+            >
+
+            <div class="car-info">
+
+                <h3>
+                    SUBARU BRZ S 2.4L
+                </h3>
+
+                <p>2021 • Manual</p>
+                <p>2.4L Boxer Engine</p>
+                <p>Sports Coupe</p>
+
+                <div class="price">
+                    RM 150,900
+                </div>
+
+                <button class="btn"
+                    onclick="showCar(
+                    'SUBARU BRZ S 2.4L 2021',
+                    'RM 150,900')">
+
+                    Lihat Detail
+
+                </button>
+
+            </div>
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- LOAN CALCULATOR -->
+<section class="loan-section" id="loan">
+
+    <div class="section-title">
+
+        <h2>Loan Calculator</h2>
+
+        <p>
+            Kira anggaran bayaran bulanan kereta
+        </p>
+
+    </div>
+
+
+    <div class="loan-box">
+
+        <label>
+            Pilih Kereta
+        </label>
+
+        <select id="loanCar">
+
+            <option value="225900">
+                Honda Civic FL5 Type R Mugen - RM225,900
+            </option>
+
+            <option value="213000">
+                Alfa Romeo Stelvio Veloce Q4 - RM213,000
+            </option>
+
+            <option value="235000">
+                Toyota GR Yaris Sport - RM235,000
+            </option>
+
+            <option value="273000">
+                Toyota Alphard 2.5 Z - RM273,000
+            </option>
+
+            <option value="325000">
+                Lexus RX350 - RM325,000
+            </option>
+
+            <option value="148900">
+                Toyota Voxy S-Z - RM148,900
+            </option>
+
+            <option value="349000">
+                Land Rover Defender 110 X-Dynamic HSE D300 - RM349,000
+            </option>
+
+            <option value="150900">
+                Subaru BRZ S 2.4L - RM150,900
+            </option>
+
+        </select>
+
+
+        <label>
+            Deposit (RM)
+        </label>
+
+        <input
+            type="number"
+            id="deposit"
+            value="0"
+            min="0"
+            placeholder="Contoh: 30000"
+        >
+
+
+        <label>
+            Kadar Faedah (% setahun)
+        </label>
+
+        <input
+            type="number"
+            id="interest"
+            value="3"
+            min="0"
+            step="0.1"
+            placeholder="Contoh: 3"
+        >
+
+
+        <label>
+            Tempoh Pinjaman
+        </label>
+
+        <select id="years">
+
+            <option value="5">
+                5 Tahun
+            </option>
+
+            <option value="7">
+                7 Tahun
+            </option>
+
+            <option value="9" selected>
+                9 Tahun
+            </option>
+
+        </select>
+
+
+        <button
+            class="btn"
+            onclick="calculateLoan()"
+        >
+            Kira Ansuran
+        </button>
+
+
+        <div class="loan-result">
+
+            <h3>
+                Anggaran Bayaran
+            </h3>
+
+            <div
+                class="monthly"
+                id="monthlyPayment"
+            >
+                RM 0.00 / bulan
             </div>
 
-        </div>
-    </section>
-
-
-    <!-- ABOUT -->
-    <section class="about" id="about">
-
-        <div class="section-title">
-            <h2>Tentang RaziffhamCars</h2>
-        </div>
-
-        <div class="about-content">
-
-            <p>
-                RaziffhamCars menyediakan pilihan kereta untuk
-                pelanggan yang mencari kenderaan berkualiti.
-                Kami memberikan maklumat kereta yang jelas
-                serta memudahkan pelanggan untuk menghubungi
-                penjual melalui WhatsApp.
+            <p id="loanAmount">
+                Jumlah pinjaman: RM 0.00
             </p>
 
-        </div>
-
-    </section>
-
-
-    <!-- CONTACT -->
-    <section id="contact">
-
-        <div class="section-title">
-
-            <h2>Hubungi Kami</h2>
-
-            <p>
-                Hantar mesej terus ke WhatsApp RaziffhamCars
+            <p id="totalInterest">
+                Jumlah faedah: RM 0.00
             </p>
 
-        </div>
-
-        <div class="contact-form">
-
-            <input
-                type="text"
-                id="name"
-                placeholder="Nama anda"
-            >
-
-            <input
-                type="email"
-                id="email"
-                placeholder="Email anda"
-            >
-
-            <textarea
-                id="message"
-                placeholder="Mesej anda..."
-            ></textarea>
-
-            <button
-                class="btn"
-                onclick="sendMessage()"
-            >
-                Hantar Ke WhatsApp
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-    <footer>
-
-        <p>
-            © 2026 RaziffhamCars. All Rights Reserved.
-        </p>
-
-        <p>
-            WhatsApp: 011-6136 1426
-        </p>
-
-    </footer>
-
-
-    <!-- POPUP -->
-    <div class="popup" id="popup">
-
-        <div class="popup-box">
-
-            <span
-                class="close"
-                onclick="closePopup()"
-            >
-                &times;
-            </span>
-
-            <h2 id="popupTitle">
-                Honda Civic Type R FL5
-            </h2>
-
-            <p id="popupPrice">
-                Harga: RM 225,900
+            <p id="totalPayment">
+                Jumlah bayaran: RM 0.00
             </p>
-
-            <button
-                class="btn"
-                onclick="contactSeller()"
-            >
-                WhatsApp Penjual
-            </button>
 
         </div>
 
     </div>
 
+</section>
 
-    <!-- JAVASCRIPT -->
-    <script>
 
-        function searchCars() {
+<!-- ABOUT -->
+<section class="about" id="about">
 
-            let search =
-                document
-                .getElementById("search")
-                .value
-                .toLowerCase();
+    <div class="section-title">
 
-            let cars =
-                document.querySelectorAll(".car");
+        <h2>Tentang RaziffhamCars</h2>
 
-            cars.forEach(function(car) {
+    </div>
 
-                let name =
-                    car
-                    .getAttribute("data-name")
-                    .toLowerCase();
+    <div class="about-content">
 
-                if (name.includes(search)) {
+        <p>
+            RaziffhamCars menyediakan pilihan kereta
+            premium, performance dan family untuk
+            pelanggan. Semak model, harga dan anggaran
+            loan sebelum menghubungi penjual.
+        </p>
 
-                    car.style.display = "block";
+    </div>
 
-                } else {
+</section>
 
-                    car.style.display = "none";
 
-                }
+<!-- CONTACT -->
+<section id="contact">
 
-            });
+    <div class="section-title">
+
+        <h2>Hubungi Kami</h2>
+
+        <p>
+            Mesej terus ke WhatsApp RaziffhamCars
+        </p>
+
+    </div>
+
+
+    <div class="contact-form">
+
+        <input
+            type="text"
+            id="name"
+            placeholder="Nama anda"
+        >
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Email anda"
+        >
+
+        <textarea
+            id="message"
+            placeholder="Mesej anda..."
+        ></textarea>
+
+        <button
+            class="btn"
+            onclick="sendMessage()"
+        >
+            Hantar Ke WhatsApp
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <p>
+        © 2026 RaziffhamCars. All Rights Reserved.
+    </p>
+
+    <p>
+        WhatsApp: 011-6136 1426
+    </p>
+
+</footer>
+
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+
+    <div class="popup-box">
+
+        <span
+            class="close"
+            onclick="closePopup()"
+        >
+            &times;
+        </span>
+
+        <h2 id="popupTitle">
+            Kereta
+        </h2>
+
+        <p id="popupPrice">
+            Harga
+        </p>
+
+        <button
+            class="btn"
+            onclick="contactSeller()"
+        >
+            WhatsApp Penjual
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* SEARCH */
+
+function searchCars(){
+
+    let search =
+        document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+    let cars =
+        document.querySelectorAll(".car");
+
+    cars.forEach(function(car){
+
+        let name =
+            car
+            .getAttribute("data-name")
+            .toLowerCase();
+
+        if(name.includes(search)){
+
+            car.style.display="block";
+
+        }else{
+
+            car.style.display="none";
+
         }
 
+    });
+}
 
-        function showCar(name, price) {
 
+/* POPUP */
+
+function showCar(name,price){
+
+    document
+    .getElementById("popupTitle")
+    .innerText=name;
+
+    document
+    .getElementById("popupPrice")
+    .innerText="Harga: "+price;
+
+    document
+    .getElementById("popup")
+    .style.display="flex";
+}
+
+
+function closePopup(){
+
+    document
+    .getElementById("popup")
+    .style.display="none";
+}
+
+
+/* WHATSAPP */
+
+function contactSeller(){
+
+    let carName =
+        document
+        .getElementById("popupTitle")
+        .innerText;
+
+    let carPrice =
+        document
+        .getElementById("popupPrice")
+        .innerText;
+
+    let message =
+        "Assalamualaikum RaziffhamCars,%0A%0A"+
+        "Saya berminat dengan kereta:%0A"+
+        encodeURIComponent(carName)+
+        "%0A"+
+        encodeURIComponent(carPrice)+
+        "%0A%0A"+
+        "Boleh saya dapatkan maklumat lanjut?";
+
+    let whatsapp =
+        "https://wa.me/601161361426?text="+message;
+
+    window.open(
+        whatsapp,
+        "_blank"
+    );
+
+    closePopup();
+}
+
+
+/* CONTACT FORM */
+
+function sendMessage(){
+
+    let name =
+        document
+        .getElementById("name")
+        .value
+        .trim();
+
+    let email =
+        document
+        .getElementById("email")
+        .value
+        .trim();
+
+    let message =
+        document
+        .getElementById("message")
+        .value
+        .trim();
+
+
+    if(
+        name==="" ||
+        email==="" ||
+        message===""
+    ){
+
+        alert(
+            "Sila lengkapkan semua ruangan."
+        );
+
+        return;
+    }
+
+
+    let whatsappMessage =
+        "Assalamualaikum RaziffhamCars,%0A%0A"+
+        "Nama: "+
+        encodeURIComponent(name)+
+        "%0A"+
+        "Email: "+
+        encodeURIComponent(email)+
+        "%0A%0A"+
+        "Mesej:%0A"+
+        encodeURIComponent(message);
+
+
+    let whatsapp =
+        "https://wa.me/601161361426?text="+
+        whatsappMessage;
+
+
+    window.open(
+        whatsapp,
+        "_blank"
+    );
+
+
+    document.getElementById("name").value="";
+    document.getElementById("email").value="";
+    document.getElementById("message").value="";
+}
+
+
+/* LOAN CALCULATOR */
+
+function calculateLoan(){
+
+    let price =
+        Number(
             document
-                .getElementById("popupTitle")
-                .innerText = name;
+            .getElementById("loanCar")
+            .value
+        );
 
+    let deposit =
+        Number(
             document
-                .getElementById("popupPrice")
-                .innerText =
-                "Harga: " + price;
+            .getElementById("deposit")
+            .value
+        );
 
+    let interest =
+        Number(
             document
-                .getElementById("popup")
-                .style.display = "flex";
-        }
+            .getElementById("interest")
+            .value
+        );
 
-
-        function closePopup() {
-
+    let years =
+        Number(
             document
-                .getElementById("popup")
-                .style.display = "none";
-        }
+            .getElementById("years")
+            .value
+        );
 
 
-        function contactSeller() {
+    if(deposit < 0){
+        deposit=0;
+    }
 
-            let carName =
-                document
-                .getElementById("popupTitle")
-                .innerText;
+    if(deposit > price){
+        deposit=price;
+    }
 
-            let carPrice =
-                document
-                .getElementById("popupPrice")
-                .innerText;
-
-            let message =
-                "Assalamualaikum RaziffhamCars,%0A%0A" +
-                "Saya berminat dengan kereta:%0A" +
-                encodeURIComponent(carName) +
-                "%0A" +
-                encodeURIComponent(carPrice) +
-                "%0A%0A" +
-                "Boleh saya dapatkan maklumat lanjut?";
-
-            let whatsapp =
-                "https://wa.me/601161361426?text=" +
-                message;
-
-            window.open(
-                whatsapp,
-                "_blank"
-            );
-
-            closePopup();
-        }
+    if(interest < 0){
+        interest=0;
+    }
 
 
-        function sendMessage() {
+    let loanAmount =
+        price - deposit;
 
-            let name =
-                document
-                .getElementById("name")
-                .value
-                .trim();
-
-            let email =
-                document
-                .getElementById("email")
-                .value
-                .trim();
-
-            let message =
-                document
-                .getElementById("message")
-                .value
-                .trim();
+    let months =
+        years * 12;
 
 
-            if (
-                name === "" ||
-                email === "" ||
-                message === ""
-            ) {
+    /*
+        Flat rate calculation:
 
-                alert(
-                    "Sila lengkapkan semua ruangan."
-                );
+        Interest =
+        loan amount × interest rate × years
+    */
 
-                return;
+    let interestAmount =
+        loanAmount *
+        (interest / 100) *
+        years;
+
+
+    let totalPayment =
+        loanAmount +
+        interestAmount;
+
+
+    let monthly =
+        totalPayment /
+        months;
+
+
+    document
+    .getElementById("monthlyPayment")
+    .innerText =
+        "RM " +
+        monthly.toLocaleString(
+            "ms-MY",
+            {
+                minimumFractionDigits:2,
+                maximumFractionDigits:2
             }
+        ) +
+        " / bulan";
 
 
-            let whatsappMessage =
-                "Assalamualaikum RaziffhamCars,%0A%0A" +
-                "Nama: " +
-                encodeURIComponent(name) +
-                "%0A" +
-                "Email: " +
-                encodeURIComponent(email) +
-                "%0A%0A" +
-                "Mesej:%0A" +
-                encodeURIComponent(message);
-
-
-            let whatsapp =
-                "https://wa.me/601161361426?text=" +
-                whatsappMessage;
-
-
-            window.open(
-                whatsapp,
-                "_blank"
-            );
-
-
-            document
-                .getElementById("name")
-                .value = "";
-
-            document
-                .getElementById("email")
-                .value = "";
-
-            document
-                .getElementById("message")
-                .value = "";
-        }
-
-
-        window.onclick = function(event) {
-
-            let popup =
-                document.getElementById("popup");
-
-            if (event.target === popup) {
-
-                closePopup();
-
+    document
+    .getElementById("loanAmount")
+    .innerText =
+        "Jumlah pinjaman: RM " +
+        loanAmount.toLocaleString(
+            "ms-MY",
+            {
+                minimumFractionDigits:2
             }
-        };
+        );
 
-    </script>
+
+    document
+    .getElementById("totalInterest")
+    .innerText =
+        "Jumlah faedah: RM " +
+        interestAmount.toLocaleString(
+            "ms-MY",
+            {
+                minimumFractionDigits:2
+            }
+        );
+
+
+    document
+    .getElementById("totalPayment")
+    .innerText =
+        "Jumlah bayaran: RM " +
+        totalPayment.toLocaleString(
+            "ms-MY",
+            {
+                minimumFractionDigits:2
+            }
+        );
+}
+
+
+/* CLOSE POPUP WHEN CLICK OUTSIDE */
+
+window.onclick=function(event){
+
+    let popup =
+        document.getElementById("popup");
+
+    if(event.target===popup){
+
+        closePopup();
+
+    }
+
+};
+
+
+/* CALCULATE DEFAULT LOAN */
+
+calculateLoan();
+
+</script>
 
 </body>
-  </html>
+</html>
