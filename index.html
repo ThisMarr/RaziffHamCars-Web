@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RaziffhamCars | Honda Civic Type R FL5</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #080808;
+            color: white;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: #111;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #e50914;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #e50914;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+            background:
+                linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.9)),
+                url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #e50914;
+        }
+
+        .hero p {
+            font-size: 19px;
+            color: #ddd;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #e50914;
+            color: white;
+            border: none;
+            padding: 13px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #ff2633;
+            transform: translateY(-2px);
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #aaa;
+        }
+
+        /* SEARCH */
+        .search-box {
+            max-width: 500px;
+            margin: 0 auto 40px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #333;
+            background: #151515;
+            color: white;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .search-box input:focus {
+            border-color: #e50914;
+        }
+
+        /* CARS */
+        .cars {
+            display: flex;
+            justify-content: center;
+        }
+
+        .car {
+            width: 430px;
+            background: #111;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #252525;
+            transition: 0.3s;
+        }
+
+        .car:hover {
+            transform: translateY(-8px);
+            border-color: #e50914;
+            box-shadow: 0 10px 35px rgba(229, 9, 20, 0.2);
+        }
+
+        .car img {
+            width: 100%;
+            height: 270px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .car-info {
+            padding: 25px;
+        }
+
+        .car-info h3 {
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
+
+        .car-info p {
+            color: #aaa;
+            margin-bottom: 7px;
+        }
+
+        .price {
+            font-size: 28px;
+            color: #e50914;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        /* ABOUT */
+        .about {
+            background: #101010;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .about p {
+            color: #bbb;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* CONTACT */
+        .contact-form {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #111;
+            border: 1px solid #333;
+            color: white;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #e50914;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #050505;
+            text-align: center;
+            padding: 25px;
+            color: #777;
+            border-top: 1px solid #222;
+        }
+
+        /* POPUP */
+        .popup {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .popup-box {
+            background: #151515;
+            width: 400px;
+            max-width: 100%;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #333;
+        }
+
+        .popup-box h2 {
+            margin-bottom: 15px;
+        }
+
+        .popup-box p {
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: white;
+        }
+
+        /* MOBILE */
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                gap: 12px;
+                font-size: 13px;
+            }
+
+            .logo {
+                font-size: 19px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+
+            .car {
+                width: 100%;
+            }
+
+            .car img {
+                height: 230px;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">
+            Raziffham<span>Cars</span>
+        </div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#cars">Kereta</a></li>
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+
+            <h1>
+                Honda Civic
+                <span>Type R</span>
+            </h1>
+
+            <p>
+                Honda Civic Type R FL5 2022.
+                Performance tinggi, design agresif dan
+                pengalaman pemanduan yang luar biasa.
+            </p>
+
+            <a href="#cars" class="btn">
+                Lihat Kereta
+            </a>
+
+        </div>
+    </section>
+
+
+    <!-- CARS -->
+    <section id="cars">
+
+        <div class="section-title">
+            <h2>Kereta Untuk Dijual</h2>
+            <p>Kereta pilihan daripada RaziffhamCars</p>
+        </div>
+
+        <div class="search-box">
+            <input
+                type="text"
+                id="search"
+                placeholder="Cari kereta..."
+                onkeyup="searchCars()"
+            >
+        </div>
+
+        <div class="cars">
+
+            <!-- HONDA CIVIC TYPE R FL5 -->
+            <div class="car" data-name="Honda Civic Type R FL5">
+
+                <img
+                    src="https://careta.my/sites/default/files/photo-gallery/2023-03/HONDA-CIVIC-TYPE-R-EXTERIOR-01.jpg"
+                    alt="Honda Civic Type R FL5 Championship White 2022"
+                >
+
+                <div class="car-info">
+
+                    <h3>
+                        Honda Civic Type R FL5
+                    </h3>
+
+                    <p>
+                        2022 • Manual
+                    </p>
+
+                    <p>
+                        2.0L VTEC Turbo
+                    </p>
+
+                    <p>
+                        Championship White
+                    </p>
+
+                    <div class="price">
+                        RM 225,900
+                    </div>
+
+                    <button
+                        class="btn"
+                        onclick="showCar(
+                            'Honda Civic Type R FL5 2022',
+                            'RM 225,900'
+                        )"
+                    >
+                        Lihat Detail
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+        <div class="section-title">
+            <h2>Tentang RaziffhamCars</h2>
+        </div>
+
+        <div class="about-content">
+
+            <p>
+                RaziffhamCars menyediakan pilihan kereta untuk
+                pelanggan yang mencari kenderaan berkualiti.
+                Kami memberikan maklumat kereta yang jelas
+                serta memudahkan pelanggan untuk menghubungi
+                penjual melalui WhatsApp.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+        <div class="section-title">
+
+            <h2>Hubungi Kami</h2>
+
+            <p>
+                Hantar mesej terus ke WhatsApp RaziffhamCars
+            </p>
+
+        </div>
+
+        <div class="contact-form">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Nama anda"
+            >
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Email anda"
+            >
+
+            <textarea
+                id="message"
+                placeholder="Mesej anda..."
+            ></textarea>
+
+            <button
+                class="btn"
+                onclick="sendMessage()"
+            >
+                Hantar Ke WhatsApp
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 RaziffhamCars. All Rights Reserved.
+        </p>
+
+        <p>
+            WhatsApp: 011-6136 1426
+        </p>
+
+    </footer>
+
+
+    <!-- POPUP -->
+    <div class="popup" id="popup">
+
+        <div class="popup-box">
+
+            <span
+                class="close"
+                onclick="closePopup()"
+            >
+                &times;
+            </span>
+
+            <h2 id="popupTitle">
+                Honda Civic Type R FL5
+            </h2>
+
+            <p id="popupPrice">
+                Harga: RM 225,900
+            </p>
+
+            <button
+                class="btn"
+                onclick="contactSeller()"
+            >
+                WhatsApp Penjual
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        function searchCars() {
+
+            let search =
+                document
+                .getElementById("search")
+                .value
+                .toLowerCase();
+
+            let cars =
+                document.querySelectorAll(".car");
+
+            cars.forEach(function(car) {
+
+                let name =
+                    car
+                    .getAttribute("data-name")
+                    .toLowerCase();
+
+                if (name.includes(search)) {
+
+                    car.style.display = "block";
+
+                } else {
+
+                    car.style.display = "none";
+
+                }
+
+            });
+        }
+
+
+        function showCar(name, price) {
+
+            document
+                .getElementById("popupTitle")
+                .innerText = name;
+
+            document
+                .getElementById("popupPrice")
+                .innerText =
+                "Harga: " + price;
+
+            document
+                .getElementById("popup")
+                .style.display = "flex";
+        }
+
+
+        function closePopup() {
+
+            document
+                .getElementById("popup")
+                .style.display = "none";
+        }
+
+
+        function contactSeller() {
+
+            let carName =
+                document
+                .getElementById("popupTitle")
+                .innerText;
+
+            let carPrice =
+                document
+                .getElementById("popupPrice")
+                .innerText;
+
+            let message =
+                "Assalamualaikum RaziffhamCars,%0A%0A" +
+                "Saya berminat dengan kereta:%0A" +
+                encodeURIComponent(carName) +
+                "%0A" +
+                encodeURIComponent(carPrice) +
+                "%0A%0A" +
+                "Boleh saya dapatkan maklumat lanjut?";
+
+            let whatsapp =
+                "https://wa.me/601161361426?text=" +
+                message;
+
+            window.open(
+                whatsapp,
+                "_blank"
+            );
+
+            closePopup();
+        }
+
+
+        function sendMessage() {
+
+            let name =
+                document
+                .getElementById("name")
+                .value
+                .trim();
+
+            let email =
+                document
+                .getElementById("email")
+                .value
+                .trim();
+
+            let message =
+                document
+                .getElementById("message")
+                .value
+                .trim();
+
+
+            if (
+                name === "" ||
+                email === "" ||
+                message === ""
+            ) {
+
+                alert(
+                    "Sila lengkapkan semua ruangan."
+                );
+
+                return;
+            }
+
+
+            let whatsappMessage =
+                "Assalamualaikum RaziffhamCars,%0A%0A" +
+                "Nama: " +
+                encodeURIComponent(name) +
+                "%0A" +
+                "Email: " +
+                encodeURIComponent(email) +
+                "%0A%0A" +
+                "Mesej:%0A" +
+                encodeURIComponent(message);
+
+
+            let whatsapp =
+                "https://wa.me/601161361426?text=" +
+                whatsappMessage;
+
+
+            window.open(
+                whatsapp,
+                "_blank"
+            );
+
+
+            document
+                .getElementById("name")
+                .value = "";
+
+            document
+                .getElementById("email")
+                .value = "";
+
+            document
+                .getElementById("message")
+                .value = "";
+        }
+
+
+        window.onclick = function(event) {
+
+            let popup =
+                document.getElementById("popup");
+
+            if (event.target === popup) {
+
+                closePopup();
+
+            }
+        };
+
+    </script>
+
+</body>
+  </html>
